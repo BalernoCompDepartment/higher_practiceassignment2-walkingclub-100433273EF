@@ -39,6 +39,18 @@ public static void writeToFile(member [] tempMembers, double tempFurthest) throw
         }
     }
 
+    int marathons = 0;
+
+    bw.write("\n");
+    bw.write("The number of whole marathons walked by each member is:");
+    bw.write("\n");
+    
+    for (int index = 0; index < tempMembers.length; index ++) {
+        marathons = (int) Math.floor(tempMembers[index].distance / 26.22);
+        bw.write(tempMembers[index].forename + "," + tempMembers[index].surname + "," + marathons);
+        bw.write("\n");
+    }
+
     bw.newLine();
     bw.close();
 }
